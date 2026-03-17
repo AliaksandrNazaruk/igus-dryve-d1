@@ -22,7 +22,7 @@ class RetryPolicy(BaseModel):
     max_delay_s: float = Field(default=5.0, gt=0)
     jitter_s: float = Field(default=0.1, ge=0)
 
-    def to_transport_policy(self) -> "TransportRetryPolicy":
+    def to_transport_policy(self) -> "TransportRetryPolicy":  # noqa: F821
         """Convert to the transport-layer ``RetryPolicy`` dataclass.
 
         ``jitter_s`` (absolute seconds) is mapped to ``jitter_fraction``

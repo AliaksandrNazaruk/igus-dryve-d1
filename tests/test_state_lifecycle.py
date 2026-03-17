@@ -15,7 +15,6 @@ import time
 from typing import Any
 from unittest.mock import AsyncMock, MagicMock, patch
 
-import pytest
 from fastapi import FastAPI
 
 from app import state

@@ -417,7 +417,6 @@ class MotionCommandsMixin:
 
     async def home(self, *, timeout_s: float = 30.0, op_id: str | None = None) -> HomingResult:
         """Perform homing operation."""
-        from ..motion.homing import HomingResult
 
         op_id = op_id or uuid.uuid4().hex[:8]
         _LOGGER.info("home[%s]: requested timeout_s=%.2f", op_id, float(timeout_s))

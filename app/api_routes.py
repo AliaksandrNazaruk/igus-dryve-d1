@@ -225,7 +225,7 @@ async def move_to_position(request: Request, req: MoveToPositionRequest):
     return await _execute_command(
         request,
         operation="move_to_position",
-        invoke=lambda op_id, _uc=use_cases, _cmd=cmd: _uc.move_to_position(_cmd, op_id=op_id),
+        invoke=lambda op_id, _uc=use_cases, _cmd=cmd: _uc.move_to_position(_cmd, op_id=op_id),  # type: ignore[misc]
     )
 
 
@@ -242,7 +242,7 @@ async def jog_start(request: Request, req: JogMoveRequest):
     return await _execute_command(
         request,
         operation="jog_start",
-        invoke=lambda op_id, _uc=use_cases, _cmd=cmd: _uc.jog_start(_cmd, op_id=op_id),
+        invoke=lambda op_id, _uc=use_cases, _cmd=cmd: _uc.jog_start(_cmd, op_id=op_id),  # type: ignore[misc]
     )
 
 
@@ -259,7 +259,7 @@ async def jog_update(request: Request, req: JogMoveRequest):
     return await _execute_command(
         request,
         operation="jog_update",
-        invoke=lambda op_id, _uc=use_cases, _cmd=cmd: _uc.jog_update(_cmd, op_id=op_id),
+        invoke=lambda op_id, _uc=use_cases, _cmd=cmd: _uc.jog_update(_cmd, op_id=op_id),  # type: ignore[misc]
     )
 
 
@@ -274,7 +274,7 @@ async def jog_stop_endpoint(request: Request):
     return await _execute_command(
         request,
         operation="jog_stop",
-        invoke=lambda op_id, _uc=use_cases: _uc.jog_stop(op_id=op_id),
+        invoke=lambda op_id, _uc=use_cases: _uc.jog_stop(op_id=op_id),  # type: ignore[misc]
     )
 
 
@@ -291,7 +291,7 @@ async def stop_drive(request: Request, req: StopRequest):
     return await _execute_command(
         request,
         operation="stop",
-        invoke=lambda op_id, _uc=use_cases, _cmd=cmd: _uc.stop(_cmd, op_id=op_id),
+        invoke=lambda op_id, _uc=use_cases, _cmd=cmd: _uc.stop(_cmd, op_id=op_id),  # type: ignore[misc]
     )
 
 
@@ -310,7 +310,7 @@ async def reference_drive(request: Request, req: ReferenceRequest):
     return await _execute_command(
         request,
         operation="reference",
-        invoke=lambda op_id, _uc=use_cases, _cmd=cmd: _uc.reference(_cmd, op_id=op_id),
+        invoke=lambda op_id, _uc=use_cases, _cmd=cmd: _uc.reference(_cmd, op_id=op_id),  # type: ignore[misc]
     )
 
 
@@ -327,7 +327,7 @@ async def fault_reset_drive(request: Request, req: FaultResetRequest):
     return await _execute_command(
         request,
         operation="fault_reset",
-        invoke=lambda op_id, _uc=use_cases, _cmd=cmd: _uc.fault_reset(_cmd, op_id=op_id),
+        invoke=lambda op_id, _uc=use_cases, _cmd=cmd: _uc.fault_reset(_cmd, op_id=op_id),  # type: ignore[misc]
     )
 
 

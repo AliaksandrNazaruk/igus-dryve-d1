@@ -13,7 +13,7 @@ import logging
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from ..cia402.state_machine import CiA402State, CiA402StateMachine
+    from ..cia402.state_machine import CiA402StateMachine
     from ..motion.jog import JogController
 
 _LOGGER = logging.getLogger(__name__)

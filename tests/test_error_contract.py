@@ -10,11 +10,10 @@ Risk: R-04 — wiring tests check status codes but not error semantics
 
 from __future__ import annotations
 
-import pytest
 from starlette.testclient import TestClient
 
 import main
-from tests.fakes import FakeDrive, FakeEventBus, AsyncNoopLock, ControllableLock, set_app_state
+from tests.fakes import FakeDrive, ControllableLock, set_app_state
 
 
 _MOVE_BODY = {

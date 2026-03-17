@@ -16,7 +16,7 @@ from collections.abc import Callable
 from dataclasses import dataclass
 
 from ..config.runtime_policy import allow_tid_mismatch
-from .clock import monotonic_s, sleep_s
+from .clock import monotonic_s
 from .modbus_tcp_client import ModbusTcpClient, TcpConfig
 from .retry import RetryBudget, RetryPolicy
 

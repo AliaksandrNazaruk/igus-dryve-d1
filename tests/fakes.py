@@ -12,7 +12,7 @@ from dataclasses import dataclass, field
 from typing import Any
 
 from app.events import EventType
-from drivers.dryve_d1.od.statusword import CiA402State, infer_cia402_state
+from drivers.dryve_d1.od.statusword import CiA402State
 
 
 # ---------------------------------------------------------------------------

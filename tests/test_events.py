@@ -1,9 +1,7 @@
 """Tests for EventBus: ring-buffer replay and DROPPED sentinel behaviour."""
 from __future__ import annotations
 
-import asyncio
 
-import pytest
 
 from app.events import DROPPED, DriveEvent, EventBus, EventType, _DroppedSentinel
 

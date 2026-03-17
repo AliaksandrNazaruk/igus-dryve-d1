@@ -7,14 +7,13 @@ is_moving detection with mode-aware logic, and position limit accessors.
 from __future__ import annotations
 
 import logging
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING
 
 from ..od.indices import ODIndex
 from ..od.statusword import decode_statusword, infer_cia402_state
 from ..transport.clock import monotonic_s
 
 if TYPE_CHECKING:
-    from ..cia402.fault import FaultManager
     from ..motion.jog import JogController
     from ..telemetry.poller import TelemetryPoller
     from ..telemetry.snapshots import DriveSnapshot

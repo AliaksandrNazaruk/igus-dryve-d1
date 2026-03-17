@@ -4,9 +4,7 @@ Covers: multiple subscribers, subscriber drop + rejoin, ring buffer replay
 during high publish rate.
 """
 
-import asyncio
 
-import pytest
 
 from app.events import DROPPED, EventBus, EventType
 
@@ -55,7 +53,7 @@ class TestConcurrentSSESubscribers:
     def test_subscriber_dropped_and_new_joins(self):
         """After a subscriber is dropped, a new subscriber can join and receive events."""
         bus = EventBus()
-        old_q = bus.subscribe()
+        bus.subscribe()  # intentionally unused — we want it to be dropped
 
         # Fill and drop old subscriber
         for i in range(110):
