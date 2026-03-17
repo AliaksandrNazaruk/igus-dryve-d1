@@ -1,0 +1,28 @@
+[project]
+name = "igus-dryve-d1-service"
+version = "1.0.0"
+description = "FastAPI microservice for igus Dryve D1 motor control via Modbus/TCP"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.12"
+authors = [{name = "Aliaksandr Nazaruk"}]
+keywords = ["igus", "dryve-d1", "modbus-tcp", "motor-control", "cia402", "fastapi"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Framework :: FastAPI",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: System :: Hardware :: Hardware Drivers",
+    "License :: OSI Approved :: MIT License",
+]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 120
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
+
+[tool.pytest.ini_options]
+markers = ["simulator: requires Modbus simulator or hardware"]

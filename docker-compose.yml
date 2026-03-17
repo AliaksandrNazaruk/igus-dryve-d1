@@ -1,0 +1,9 @@
+services:
+  igus-service:
+    build: .
+    container_name: igus-dryve-d1
+    ports:
+      - "${HOST_PORT:-8101}:8101"
+    env_file:
+      - .env
+    restart: unless-stopped
