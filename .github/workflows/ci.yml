@@ -67,7 +67,7 @@ jobs:
 
       - name: Mypy checks
         run: |
-          python -m mypy
+          python -m mypy main.py app
 
   security:
     runs-on: ubuntu-latest
@@ -96,7 +96,7 @@ jobs:
         run: python -m bandit -r app drivers/dryve_d1 -ll
 
       - name: pip-audit dependency scan
-        run: python -m pip-audit
+        run: python -m pip_audit
 
   test:
     runs-on: ubuntu-latest
