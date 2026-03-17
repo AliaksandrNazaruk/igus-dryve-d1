@@ -38,4 +38,5 @@ module = "drivers.dryve_d1.config.models"
 disable_error_code = ["name-defined"]
 
 [tool.pytest.ini_options]
+asyncio_mode = "auto"
 markers = ["simulator: requires Modbus simulator or hardware"]
