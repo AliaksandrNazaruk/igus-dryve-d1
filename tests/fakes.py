@@ -12,7 +12,7 @@ from dataclasses import dataclass, field
 from typing import Any
 
 from app.events import EventType
-from drivers.dryve_d1.od.statusword import CiA402State
+from dryve_d1.od.statusword import CiA402State
 
 
 # ---------------------------------------------------------------------------
@@ -34,7 +34,7 @@ class FakeSnapshot:
 
     def __post_init__(self) -> None:
         if self.cia402_state is None:
-            from drivers.dryve_d1.od.statusword import infer_cia402_state
+            from dryve_d1.od.statusword import infer_cia402_state
             self.cia402_state = infer_cia402_state(self.statusword)
 
 
@@ -237,7 +237,7 @@ class FakeDrive:
         self.calls.append(("home", {"timeout_s": timeout_s, "op_id": op_id}))
         if self.raise_on_home is not None:
             raise self.raise_on_home
-        from drivers.dryve_d1.motion.homing import HomingResult
+        from dryve_d1.motion.homing import HomingResult
         return HomingResult(attained=True, error=False, statusword=0x0627)
 
     async def fault_reset(self, *, recover: bool = True, op_id: str | None = None) -> None:

@@ -26,7 +26,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from drivers.dryve_d1.od.statusword import CiA402State as DriverCiA402State
+    from dryve_d1.od.statusword import CiA402State as DriverCiA402State
 
 # Populated lazily on first call to avoid import-time side effects from the
 # driver package.  The map is module-level so it is built only once.
@@ -36,7 +36,7 @@ _CIA402_STATE_STR_MAP: dict[DriverCiA402State, str] | None = None
 def _get_cia402_state_str_map() -> dict[DriverCiA402State, str]:
     global _CIA402_STATE_STR_MAP
     if _CIA402_STATE_STR_MAP is None:
-        from drivers.dryve_d1.od.statusword import CiA402State as DriverCiA402State
+        from dryve_d1.od.statusword import CiA402State as DriverCiA402State
 
         # Derive strings from enum member names: OPERATION_ENABLED → "operation_enabled".
         # Single source of truth — no hardcoded string list to keep in sync with api_models.

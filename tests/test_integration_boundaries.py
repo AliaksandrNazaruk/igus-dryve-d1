@@ -20,7 +20,7 @@ from dataclasses import dataclass
 from fastapi.testclient import TestClient
 
 import main
-from drivers.dryve_d1.protocol.exceptions import ModbusGatewayException
+from dryve_d1.protocol.exceptions import ModbusGatewayException
 from tests.fakes import ControllableLock, FakeDrive, FakeEventBus, set_app_state
 
 
@@ -279,8 +279,8 @@ async def test_idle_shutdown_skips_when_jog_active() -> None:
     Regression test for production bug: keepalive reads interfered with
     disable_voltage on real dryve D1 hardware.
     """
-    from drivers.dryve_d1.api.idle_shutdown import IdleShutdownMixin
-    from drivers.dryve_d1.od.statusword import CiA402State
+    from dryve_d1.api.idle_shutdown import IdleShutdownMixin
+    from dryve_d1.od.statusword import CiA402State
 
     calls: list[str] = []
 
@@ -311,8 +311,8 @@ async def test_idle_shutdown_skips_when_jog_active() -> None:
 
 async def test_idle_shutdown_skips_when_already_low_power() -> None:
     """IT-13: Idle shutdown skips disable_voltage when already SWITCH_ON_DISABLED."""
-    from drivers.dryve_d1.api.idle_shutdown import IdleShutdownMixin
-    from drivers.dryve_d1.od.statusword import CiA402State
+    from dryve_d1.api.idle_shutdown import IdleShutdownMixin
+    from dryve_d1.od.statusword import CiA402State
 
     called = False
 

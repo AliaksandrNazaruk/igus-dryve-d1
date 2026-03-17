@@ -8,6 +8,6 @@ SERVER_VERSION: str = os.getenv("SERVER_VERSION", "1.0.0")
 # Driver package version — single authoritative import with fallback.
 # Import from here instead of repeating the try/except in every module.
 try:
-    from drivers.dryve_d1 import __version__ as DRIVER_VERSION
+    from dryve_d1 import __version__ as DRIVER_VERSION
 except ImportError:
     DRIVER_VERSION = "unknown"

@@ -44,6 +44,8 @@ Production-grade **FastAPI** microservice for controlling [igus Dryve D1](https:
                       └───────────────────────────┘
 ```
 
+> The driver is available as a standalone PyPI package: [`pip install dryve-d1`](https://github.com/AliaksandrNazaruk/dryve-d1)
+
 ## Quick Start
 
 ### Docker (recommended)
@@ -155,16 +157,7 @@ API responses include `request_id` and `command_id`. SSE `type=command` events c
 │   ├── application/         #   Use cases, commands, DTOs
 │   ├── domain/              #   Health scoring
 │   └── static/              #   Control panel HTML
-├── drivers/
-│   └── dryve_d1/            # Standalone Modbus/CiA 402 driver
-│       ├── api/             #   High-level async facade
-│       ├── cia402/          #   State machine implementation
-│       ├── motion/          #   Motion profiles (position, velocity, jog, homing)
-│       ├── protocol/        #   Modbus/CANopen telegram codec
-│       ├── transport/       #   TCP client, session, retry
-│       └── telemetry/       #   Status polling & snapshots
 ├── tests/                   # Service-level tests (24 files)
-├── drivers/tests/           # Driver tests (unit, integration, property-based)
 ├── simulator.py             # Modbus TCP simulator
 ├── monitoring/              # Prometheus alert rules & runbook
 ├── Dockerfile
@@ -181,13 +174,9 @@ pip install -r requirements-dev.txt
 # Run service tests
 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python -m pytest -q -p pytest_asyncio.plugin tests -m "not simulator"
 
-# Run driver unit tests
-PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python -m pytest -q -p pytest_asyncio.plugin drivers/tests/unit -m "not simulator"
-
 # Lint & type check
-python -m ruff check main.py app tests drivers/dryve_d1
+python -m ruff check main.py app tests
 python -m mypy main.py app
-python -m mypy drivers/dryve_d1
 
 # Full local CI parity
 bash run_ci_local.sh

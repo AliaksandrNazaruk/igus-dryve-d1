@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import pytest
 
-from drivers.dryve_d1.od.statusword import CiA402State
+from dryve_d1.od.statusword import CiA402State
 from tests.fakes import FakeDrive
 
 

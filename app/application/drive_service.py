@@ -140,7 +140,7 @@ class DriveService:
         msg = f"{op} failed: {exc!s}"
 
         try:
-            from drivers.dryve_d1.protocol.exceptions import (
+            from dryve_d1.protocol.exceptions import (
                 ModbusExceptionCode,
                 ModbusGatewayException,
                 ProtocolError,

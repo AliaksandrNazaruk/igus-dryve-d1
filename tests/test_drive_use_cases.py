@@ -12,7 +12,7 @@ from app.application.commands import (
 )
 from app.application.drive_service import ServiceError
 from app.application.use_cases import DriveUseCases
-from drivers.dryve_d1.protocol.exceptions import MotionAborted
+from dryve_d1.protocol.exceptions import MotionAborted
 from tests.fakes import AsyncNoopLock, FakeDrive, FakeSnapshot
 
 
@@ -188,7 +188,7 @@ async def test_get_drive_telemetry_direct_read_path() -> None:
         return 0
 
     async def _get_cia402_state():
-        from drivers.dryve_d1.od.statusword import infer_cia402_state
+        from dryve_d1.od.statusword import infer_cia402_state
         return infer_cia402_state(0)
 
     async def _get_mode_display():

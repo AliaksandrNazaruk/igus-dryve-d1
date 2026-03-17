@@ -12,7 +12,7 @@ import pytest
 from fastapi.testclient import TestClient
 from tests.fakes import ControllableLock, FakeDrive, FakeEventBus, set_app_state
 
-from drivers.dryve_d1.protocol.exceptions import MotionAborted
+from dryve_d1.protocol.exceptions import MotionAborted
 
 
 # ---------------------------------------------------------------------------

@@ -22,11 +22,11 @@ from app.application.commands import (
 from app.application.drive_service import DriveService, ServiceError
 from app.application.mappers import driver_cia402_state_to_str, mode_display_to_str
 from app.application.results import DriveStatusResult, FaultDetailsResult, FaultInfoResult
-from drivers.dryve_d1.protocol.exceptions import MotionAborted
+from dryve_d1.protocol.exceptions import MotionAborted
 
 if TYPE_CHECKING:
     from app.protocols import AppStateProtocol
-    from drivers.dryve_d1.od.statusword import CiA402State as DriverCiA402State
+    from dryve_d1.od.statusword import CiA402State as DriverCiA402State
 
 
 @dataclass(frozen=True)

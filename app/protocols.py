@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING, Any, Protocol, runtime_checkable
 
 if TYPE_CHECKING:
     from app.events import EventBus
-    from drivers.dryve_d1.od.statusword import CiA402State as DriverCiA402State
-    from drivers.dryve_d1.telemetry.snapshots import DriveSnapshot
+    from dryve_d1.od.statusword import CiA402State as DriverCiA402State
+    from dryve_d1.telemetry.snapshots import DriveSnapshot
 
 
 @runtime_checkable

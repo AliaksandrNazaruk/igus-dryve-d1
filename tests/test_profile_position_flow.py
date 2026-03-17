@@ -1,8 +1,8 @@
 from __future__ import annotations
 
-from drivers.dryve_d1.motion.profile_position import ProfilePosition, ProfilePositionConfig
-from drivers.dryve_d1.od.controlword import CWBit
-from drivers.dryve_d1.od.indices import ODIndex
+from dryve_d1.motion.profile_position import ProfilePosition, ProfilePositionConfig
+from dryve_d1.od.controlword import CWBit
+from dryve_d1.od.indices import ODIndex
 
 
 def _bit(word: int, bit: int) -> bool:

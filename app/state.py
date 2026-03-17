@@ -9,7 +9,7 @@ from typing import Any
 from fastapi import FastAPI
 
 from app.version import DRIVER_VERSION as driver_version
-from drivers.dryve_d1 import DryveD1
+from dryve_d1 import DryveD1
 
 from .auth import get_api_key, is_auth_disabled
 from .config import Settings, create_dryve_config, get_legacy_api_phase, get_settings
@@ -268,7 +268,7 @@ async def startup(app: FastAPI) -> None:
         # Provide actionable hint for the most common integration error.
         msg = str(exc)
         try:
-            from drivers.dryve_d1.protocol.exceptions import (
+            from dryve_d1.protocol.exceptions import (
                 ModbusExceptionCode,
                 ModbusGatewayException,
             )

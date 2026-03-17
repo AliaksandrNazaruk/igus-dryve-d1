@@ -19,7 +19,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY main.py ./
 COPY app/ ./app/
-COPY drivers/ ./drivers/
 COPY simulator.py ./
 
 RUN useradd -m -u 10001 appuser && chown -R appuser:appuser /app

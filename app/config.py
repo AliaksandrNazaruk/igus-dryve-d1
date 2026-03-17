@@ -14,7 +14,7 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING, Any
 
 if TYPE_CHECKING:
-    from drivers.dryve_d1.api.drive import DryveD1Config
+    from dryve_d1.api.drive import DryveD1Config
 
 from app.env_loader import load_env_file
 
@@ -108,7 +108,7 @@ class Settings:
         """
         load_env_file()
 
-        from drivers.dryve_d1.config.runtime_policy import (
+        from dryve_d1.config.runtime_policy import (
             default_tid_mismatch_tolerance,
             default_unit_id_wildcard_tolerance,
         )
@@ -266,8 +266,8 @@ def create_dryve_config(s: Settings) -> "DryveD1Config":
     Centralises the env → driver-config mapping that was previously spread
     across 40+ lines in ``state.py:startup()``.
     """
-    from drivers.dryve_d1.api.drive import DryveD1Config
-    from drivers.dryve_d1.config.models import (
+    from dryve_d1.api.drive import DryveD1Config
+    from dryve_d1.config.models import (
         ConnectionConfig,
         DriveConfig,
         JogConfig,
